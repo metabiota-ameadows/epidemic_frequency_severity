@@ -1,0 +1,333 @@
+---
+title: "Historical outbreak frequency severity trend analysis"
+author: "Amanda J. Meadows, PhD*, Nicole Stephenson, PhD, Nita K. Madhav, MSPH, and Ben Oppenheim, PhD"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 1
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(ggplot2)
+library(nlme)
+library(broom)
+library(tidyverse)
+library(data.table)
+library(pander)
+library(sf)
+library(viridis)
+theme_set(theme_bw())
+
+```
+
+
+# Selected Pathogens
+
+Outbreak data was collected and analyzed for the following viral zoonotic pathogens:
+
+```{r, results = 'asis'}
+pathgrp_tab <- data.table("Path group" = c("Corona", "Filo", "Other"),
+                          "Pathogens" = c("MERS Coronavirus, SARS-CoV", 
+                                          "Marburg virus, Tai Forest ebolavirus, Sudan ebolavirus,
+                                           Zaire ebolavirus, Bundibugyo ebolavirus",
+                                          "Nipah virus, Machupo virus"))
+cat(pander(pathgrp_tab, split.table = Inf))
+```
+
+
+```{r}
+event_table <- fread("./data/spillover_data.csv")
+lossDatYear <- event_table[, list(reported_deaths = sum(reported_deaths),
+                                reported_cases = sum(reported_cases),
+                                reported_events = uniqueN(Event_name)),
+                         by = .(Event_start_year)]
+lossDatYear[, Event_start_demidecade := Event_start_year - Event_start_year %% 5]
+
+lossDatDemiDecade <- lossDatYear[,list(reported_deaths = sum(reported_deaths),
+                                       reported_cases = sum(reported_cases),
+                                       reported_events = sum(reported_events)),
+                                 by = .(Event_start_demidecade)]
+lossDatDemiDecade[, model_year := Event_start_demidecade - 1960]  
+lossDat <- lossDatDemiDecade[Event_start_demidecade < 2020, ]
+lossDatCovid <- lossDatDemiDecade
+```
+
+# Trend by demi decade {.tabset}
+
+* Analyzing trend in events and deaths every 5 years from 1960 through 2019 (training data excludes Covid).
+* Comparing a log fit and an exponential fit.
+
+## Events{.tabset .tabset-pills}
+
+* Trend in number of outbreaks per 5 year period (demidecade).
+
+### Plot
+
+```{r}
+ggplot(lossDat, aes(x = Event_start_demidecade, y = reported_events)) + 
+  geom_point() +
+  stat_function(fun = function(x) 1.34756*exp(0.04234*(x-1950)), aes(color = "Exponential fit (AIC 73.87)"))+
+  stat_function(fun = function(x) 10^(-50.515186 + 0.025738*(x)), aes(color = "Log fit (AIC 10.76)"))
+```
+
+### Exponential fit
+
+```{r}
+a_events <- 1
+r_events <- 0.075
+
+exp_events <- nls(reported_events ~ a*exp(r*model_year), 
+                  data = lossDat,
+                  start = list(a = a_events, r = r_events))
+summary(exp_events)
+```
+
+#### AIC
+
+```{r}
+AIC(exp_events)
+```
+
+### Log fit
+
+```{r}
+logEvent <- lm(log10(reported_events)~ Event_start_demidecade, data = lossDat)
+summary(logEvent)
+```
+
+#### AIC
+
+```{r}
+AIC(logEvent)
+```
+
+## Deaths {.tabset .tabset-pills}
+
+### Plot
+
+```{r}
+ggplot(lossDat, aes(x = Event_start_demidecade, y = reported_deaths)) + 
+  geom_point() +
+  stat_function(fun = function(x) 62.44021*exp(0.07048*(x - 1950)), aes(color = "Exponential fit (AIC 229.85)"))+
+  stat_function(fun = function(x) 10^(-90.55078 + 0.04657*(x)), aes(color = "Log fit (AIC 40.05)"))
+```
+
+### Exponential fit
+
+```{r}
+a_death <- 10
+r_death <- 0.1
+
+exp_deaths <- nls(reported_deaths ~ a*exp(r*model_year), 
+                  data = lossDat[Event_start_demidecade > 1955],
+                  start = list(a = a_death, r = r_death))
+summary(exp_deaths)
+```
+
+#### AIC
+
+```{r}
+AIC(exp_deaths)
+```
+
+### Log fit
+
+```{r}
+# fit deaths and events vs time and make future predictions
+logFit <- lm(log10(reported_deaths)~ Event_start_demidecade, data = lossDat)
+summary(logFit)
+```
+
+#### AIC
+
+```{r}
+AIC(logFit)
+```
+
+### Log fit including Covid
+
+```{r}
+# fit deaths and events vs time and make future predictions
+logFitCovid <- lm(log10(reported_deaths)~ Event_start_demidecade, data = lossDatCovid)
+summary(logFitCovid)
+```
+
+## Conclusions
+
+* Sticking with the log transformation model over the exponential fit because it is a better fit (supported by AIC).
+
+# Future predictions {.tabset}
+
+* 95% prediction interval
+
+```{r}
+# predicting out to 2030-2034
+newDat <- data.table("Event_start_demidecade" = seq(1960, 2030, 5), "upr_demidecade" = seq(1964, 2034, 5))
+newDat[, xlab := paste0(Event_start_demidecade, " - ", upr_demidecade)]
+
+# add xlabels to data
+lossDatDemiDecade <- merge(lossDatDemiDecade, newDat, by = "Event_start_demidecade")
+
+# prediction and confidence intervals
+## Deaths
+predDat <- data.table(predict(logFit, newdata = newDat, interval = "predict", level = 0.95))
+newDat <- cbind(newDat, setnames(predDat, c("log_fitDeath", "logPIlwr_Death", "logPIupr_Death")))
+predDatCovid <- data.table(predict(logFitCovid, newdata = newDat, interval = "predict", level = 0.95))
+newDat <- cbind(newDat, setnames(predDatCovid, c("log_fitDeathCovid", "logPIlwr_DeathCovid", "logPIupr_DeathCovid")))
+
+# convert back to raw numbers
+newDat[, fitDeath := 10^log_fitDeath]
+newDat[, lwrDeathPI := 10^logPIlwr_Death]
+newDat[, uprDeathPI := 10^logPIupr_Death]
+newDat[, fitDeathCovid := 10^log_fitDeathCovid]
+newDat[, lwrDeathPICovid := 10^logPIlwr_DeathCovid]
+newDat[, uprDeathPICovid := 10^logPIupr_DeathCovid]
+
+## events
+predDatEvent <- data.table(predict(logEvent, newdata = newDat, interval = "predict", level = 0.97))
+newDat <- cbind(newDat, setnames(predDatEvent, c("log_fitEvent", "logPIlwr_Event", "logPIupr_Event")))
+
+newDat[, fitEvent := 10^log_fitEvent]
+newDat[, lwrEventPI := 10^logPIlwr_Event]
+newDat[, uprEventPI := 10^logPIupr_Event]
+# outDat <- merge(lossDatDemiDecade, newDat, by = c("Event_start_demidecade", "upr_demidecade", "xlab"), all = T)
+# fwrite(outDat, "data/figureData.csv")
+```
+
+## Deaths 
+
+### Normal scale
+
+```{r}
+ggplot() + 
+  geom_point(data= lossDatDemiDecade[Event_start_demidecade < 2020],
+             aes(x = Event_start_demidecade, y = reported_deaths), size = 1) + 
+  geom_point(data= lossDatDemiDecade[Event_start_demidecade > 2015],
+             aes(x = Event_start_demidecade, y = reported_deaths), color = "red") +
+  geom_line(data = newDat[Event_start_demidecade < 2020], 
+            aes(x = Event_start_demidecade, y = fitDeath), color = "navy")+
+  geom_line(data = newDat[Event_start_demidecade >= 2015], 
+            aes(x = Event_start_demidecade, y = fitDeath), color = "navy", linetype = "dotted")+
+  geom_line(data = newDat,
+            aes(x = Event_start_demidecade, y = uprDeathPI), color = "steelblue",  linetype = "dashed")+
+  geom_line(data = newDat, 
+            aes(x = Event_start_demidecade, y = lwrDeathPI), color = "steelblue",  linetype = "dashed")+
+  scale_x_continuous(breaks = seq(1960, 2030, by = 5), labels = newDat$xlab)+
+  ylab("Reported deaths") + xlab("Year") + 
+  coord_cartesian(ylim=c(0, 15000))+
+  theme(axis.text.x = element_text(angle = 75, vjust = 0.5, hjust=0.5))
+```
+
+### Log10 scale
+
+```{r}
+comprss <- function(tx) {
+      div <- findInterval(as.numeric(gsub("\\,", "", tx)),
+         c(0, 1e3, 1e6, 1e9, 1e12) )  # modify this if negative numbers are possible
+      paste(round( as.numeric(gsub("\\,","",tx))/10^(3*(div-1)), 2),
+           c("","K","M","B","T")[div] )}
+logybreak <- c(10^seq(0, 8, 1))
+logylab <- comprss(logybreak)
+
+fig1a_log <- ggplot() + 
+  geom_point(data= lossDatDemiDecade[Event_start_demidecade < 2020],
+             aes(x = Event_start_demidecade, y = reported_deaths)) + 
+  # geom_point(data= lossDatDemiDecade[Event_start_demidecade >= 2020],
+  #            aes(x = Event_start_demidecade, y = reported_deaths), color = "red") + 
+ geom_line(data = newDat[Event_start_demidecade < 2020], 
+            aes(x = Event_start_demidecade, y = fitDeath), color = "navy")+
+  geom_line(data = newDat[Event_start_demidecade >= 2015], 
+            aes(x = Event_start_demidecade, y = fitDeath), color = "navy", linetype = "dotted")+
+  geom_line(data = newDat,
+            aes(x = Event_start_demidecade, y = uprDeathPI), color = "steelblue",  linetype = "dashed")+
+  geom_line(data = newDat, 
+            aes(x = Event_start_demidecade, y = lwrDeathPI), color = "steelblue",  linetype = "dashed")+
+  scale_x_continuous(breaks = seq(1960, 2030, by = 5), labels = newDat$xlab)+
+  ylab("Deaths") + xlab("Year") + 
+    #ylim(c(0, 1000000))+
+  scale_y_log10(labels = logylab, breaks = logybreak) +
+  theme(axis.text.x = element_text(angle = 75, vjust = 0.5, hjust=0.5))
+fig1a_log
+# ggsave(fig1a_log, filename = "./figures/log_reported_deaths.jpeg", dpi = 300, width = 5, height = 5, 
+#        units = "in", device = "jpeg")
+```
+
+## Events 
+
+### Normal scale
+
+```{r}
+ggplot() + 
+  geom_point(data= lossDatDemiDecade[Event_start_demidecade < 2020],
+             aes(x = Event_start_demidecade, y = reported_events)) + 
+  geom_line(data = newDat[Event_start_demidecade < 2020], aes(x = Event_start_demidecade, y = fitEvent), color = "navy")+
+  geom_line(data = newDat[Event_start_demidecade >= 2015], aes(x = Event_start_demidecade, y = fitEvent), 
+            color = "navy", linetype = "dotted")+
+  geom_line(data = newDat,
+            aes(x = Event_start_demidecade, y = uprEventPI), color = "steelblue",  linetype = "dashed")+
+  geom_line(data = newDat, 
+            aes(x = Event_start_demidecade, y = lwrEventPI), color = "steelblue",  linetype = "dashed")+
+  scale_x_continuous(breaks = seq(1960, 2030, by = 5), labels = newDat$xlab)+
+  ylab("Reported events") + xlab("Year") + 
+  theme(axis.text.x = element_text(angle = 75, vjust = 0.5, hjust=0.5)) + coord_cartesian(ylim=c(0, 100))
+```
+
+### Log10 scale
+
+```{r}
+ggplot() + 
+  geom_point(data= lossDatDemiDecade[Event_start_demidecade < 2020],
+             aes(x = Event_start_demidecade, y = reported_events)) + 
+  geom_line(data = newDat[Event_start_demidecade < 2020], aes(x = Event_start_demidecade, y = fitEvent), color = "navy")+
+   geom_line(data = newDat[Event_start_demidecade >= 2015], aes(x = Event_start_demidecade, y = fitEvent), color = "navy", linetype = "dotted")+
+  geom_line(data = newDat,
+            aes(x = Event_start_demidecade, y = uprEventPI), color = "steelblue",  linetype = "dashed")+
+  geom_line(data = newDat, 
+            aes(x = Event_start_demidecade, y = lwrEventPI), color = "steelblue",  linetype = "dashed")+
+  scale_x_continuous(breaks = seq(1960, 2030, by = 5), labels = newDat$xlab)+
+  ylab("Outbreaks") + xlab("Year") + 
+  theme(axis.text.x = element_text(angle = 75, vjust = 0.5, hjust=0.5)) + scale_y_log10()
+```
+
+
+## Prediction table
+
+The total number of events and deaths predicted to occur from 2020 to 2034 (±95% CI) according to the historical trend model.
+
+```{r, results = 'asis'}
+predTable <- newDat[Event_start_demidecade >= 2020, ][, list(Event_start_demidecade, 
+                                                             Events_lwr = lwrEventPI, 
+                                                             Events_upr = uprEventPI,
+                                                             Events = fitEvent,
+                                                             Deaths_lwr = lwrDeathPI,
+                                                             Deaths_upr = uprDeathPI,
+                                                             Deaths = fitDeath)]
+
+predTable <- predTable[, list("Demidecade" = Event_start_demidecade, "Events" = paste0(round(Events,0), 
+                                                " [",round(Events_lwr, 0)," - ", round(Events_upr, 0), "]"),
+                              "Deaths" = paste0(format(round(Deaths, 0), big.mark = ","), 
+                                                " [", round(Deaths_lwr, 0), " - ", format(round(Deaths_upr, 0), big.mark = ","), "]"))]
+cat(pander(predTable))
+```
+
+## Prediction table (Covid-19 data)
+
+The total number of events and deaths predicted to occur from 2020 to 2034 (±95% CI) according to the historical trend model if Covid-19 deaths up to 12/15/2021 are included in the training data.
+
+```{r, results = 'asis'}
+predTableCovid <- newDat[Event_start_demidecade >= 2020, ][, list(Event_start_demidecade, 
+                                                             Deaths_lwr = lwrDeathPICovid,
+                                                             Deaths_upr = uprDeathPICovid,
+                                                             Deaths = fitDeathCovid)]
+
+predTableCovid  <- predTableCovid[, list("Demidecade" = Event_start_demidecade, 
+                                          "Deaths" = paste0(format(round(Deaths, 0), big.mark = ","), 
+                                                " [", round(Deaths_lwr, 0), " - ", format(round(Deaths_upr, 0), big.mark = ","), "]"))]
+cat(pander(predTableCovid))
+```
+

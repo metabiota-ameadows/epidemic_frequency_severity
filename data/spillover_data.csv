@@ -1,0 +1,100 @@
+Event_name,Event_start_year,Pathogen,reported_deaths,reported_cases,Source
+Machupo virus_Bolivia_1963,1963,Machupo virus,114,514,Current Opinion in Virology
+Marburg virus_Germany_1967,1967,Marburg virus,7,31,Marburg Virus Disease (1971)
+Machupo virus_Bolivia_1969,1969,Machupo virus,6,10,Morbidity and Mortality Weekly Report
+Machupo virus_Bolivia_1970,1970,Machupo virus,5,6,Current Opinion in Virology
+Marburg virus_South Africa_1975,1975,Marburg virus,1,3,British Medical Journal
+Sudan ebolavirus_South Sudan_1976,1976,Sudan ebolavirus,151,298,Proceedings of an International Colloquium on Ebola Virus Infection and Other Haemorrhagic Fevers
+Sudan ebolavirus_United Kingdom_1976,1976,Sudan ebolavirus,0,1,Proceedings of an International Colloquium on Ebola Virus Infection and Other Haemorrhagic Fevers
+Zaire ebolavirus_Democratic Republic of the Congo_1976,1976,Zaire ebolavirus,280,318,eLife
+Zaire ebolavirus_Democratic Republic of Congo_1977,1977,Zaire ebolavirus,1,1,eLife
+Sudan ebolavirus_South Sudan_1979,1979,Sudan ebolavirus,22,34,Bulletin of the World Health Organization
+Marburg virus_Kenya_1980,1980,Marburg virus,1,2,The Lancet
+Marburg virus_Kenya_1987,1987,Marburg virus,1,1,Archives of Virology
+Machupo virus_Bolivia_1990,1990,Machupo virus,7,9,"Current Opinion in Virology, Expert Opinion on Drug Discovery"
+Marburg virus_Russia_1990,1990,Marburg virus,1,1,CDC
+Tai Forest ebolavirus_Cote d'Ivoire_1994,1994,Tai Forest ebolavirus,0,1,The Lancet
+Zaire ebolavirus_Gabon_1994,1994,Zaire ebolavirus,30,49,Journal of Infectious Diseases
+Zaire ebolavirus_Democratic Republic of the Congo_1995,1995,Zaire ebolavirus,248,317,eLife
+Zaire ebolavirus_Liberia_1995,1995,Zaire ebolavirus,0,4,WHO DON
+Zaire ebolavirus_Gabon_1996a,1996,Zaire ebolavirus,21,31,"WHO DON, Journal of Infectious Diseases"
+Zaire ebolavirus_Gabon_1996b,1996,Zaire ebolavirus,45,60,"Journal of Infectious Diseases, WHO DON"
+Zaire ebolavirus_Russia_1996,1996,Zaire ebolavirus,1,1,CDC
+Marburg virus_Democratic Republic of Congo_1998,1998,Marburg virus,125,154,The New England Journal of Medicine
+Nipah virus_Malaysia_1998,1998,Nipah virus,111,283,"Annals of Neurology, Journal of Clinical Virology, ProMED Mail, The Lancet, Morbidity and Mortality Weekly Report, Malaysian Journal of Pathology, WHO DON"
+Machupo virus_Bolivia_1999,1999,Machupo virus,0,8,Expert Opinion on Drug Discovery
+Nipah virus_Malaysia_1998,1999,Nipah virus,1,11,
+Machupo virus_Bolivia_2000,2000,Machupo virus,0,18,Expert Opinion on Drug Discovery
+Sudan ebolavirus_Uganda_2000,2000,Sudan ebolavirus,224,428,"WHO DON, [Geographic] Tropical Medicine and International Health, [Temporal] Tropical Medicine and International Health"
+Nipah virus_Bangladesh_2001,2001,Nipah virus,9,28,"Emerging Infectious Diseases, WHO DON, WHO SEARO"
+Nipah virus_India_2001,2001,Nipah virus,45,66,"WHO SEARO, Emerging Infectious Diseases"
+Zaire ebolavirus_Gabon_2001,2001,Zaire ebolavirus,97,124,"WHO DON, [Temporal] Bulletin de la Societe de Pathologie Exotique, [Geographic] Bulletin de la Societe de Pathologie Exotique, WHO Weekly Epidemiological Record"
+SARS-CoV_China_2002,2002,SARS-CoV,349,5327,"Tropical Medicine and International Health, WHO CSR, International Journal of Infectious Diseases, Public Health Agency of Canada, WHO CSR (Final Report), Annals of Internal Medicine, Emerging Infectious Diseases, Morbidity and Mortality Weekly Report, Epidemiology and Infection, WHO Weekly Epidemiological Record, WHO DON"
+Zaire ebolavirus_Republic of Congo_2002,2002,Zaire ebolavirus,10,11,"WHO Weekly Epidemiological Record, WHO DON"
+Nipah virus_Bangladesh_2003,2003,Nipah virus,8,12,"WHO SEARO, Emerging Infectious Diseases"
+SARS-CoV_China_2002,2003,SARS-CoV,573,3779,
+SARS-CoV_China_2003,2003,SARS-CoV,0,4,WHO DON
+SARS-CoV_Singapore_2003,2003,SARS-CoV,0,1,WHO DON
+SARS-CoV_Taiwan_2003,2003,SARS-CoV,0,1,WHO DON
+Zaire ebolavirus_Republic of Congo_2003a,2003,Zaire ebolavirus,128,143,WHO DON
+Zaire ebolavirus_Republic of Congo_2003b,2003,Zaire ebolavirus,29,35,"Bulletin de la Societe de Pathologie Exotique, WHO DON"
+Marburg virus_Angola_2004,2004,Marburg virus,329,375,WHO DON
+Nipah virus_Bangladesh_2004a,2004,Nipah virus,23,31,"WHO SEARO, WHO DON, Emerging Infectious Diseases"
+Nipah virus_Bangladesh_2004b,2004,Nipah virus,27,36,"WHO DON, Emerging Infectious Diseases, WHO SEARO"
+Nipah virus_Bangladesh_2004c,2004,Nipah virus,11,12,"WHO SEARO, Emerging Infectious Diseases"
+SARS-CoV_China_2004,2004,SARS-CoV,1,9,WHO DON
+Sudan ebolavirus_South Sudan_2004,2004,Sudan ebolavirus,7,17,"WHO DON, WHO Weekly Epidemiological Record"
+Zaire ebolavirus_Russia_2004,2004,Zaire ebolavirus,1,1,CDC
+Machupo virus_Bolivia_2005,2005,Machupo virus,12,200,"Current Opinion in Virology, Expert Opinion on Drug Discovery"
+Marburg virus_Angola_2004,2005,Marburg virus,0,1,
+Nipah virus_Bangladesh_2005,2005,Nipah virus,0,11,Emerging Infectious Diseases
+Zaire ebolavirus_Congo_2005,2005,Zaire ebolavirus,9,12,"Transactions of the Royal Society of Tropical Medicine and Hygiene, WHO DON"
+Bundibugyo ebolavirus_Uganda_2007,2007,Bundibugyo ebolavirus,42,131,"WHO DON, Journal of Infectious Diseases"
+Marburg virus_Uganda_2007,2007,Marburg virus,1,4,"Journal of Infectious Diseases, WHO DON, WHO Weekly Epidemiological Record"
+Nipah virus_Bangladesh_2007a,2007,Nipah virus,3,7,WHO SEARO
+Nipah virus_Bangladesh_2007b,2007,Nipah virus,5,8,WHO SEARO
+Nipah virus_Bangladesh_2007c,2007,Nipah virus,1,3,WHO SEARO
+Nipah virus_India_2007,2007,Nipah virus,5,5,"WHO SEARO, Emerging Infectious Diseases"
+Zaire ebolavirus_Democratic Republic of the Congo_2007,2007,Zaire ebolavirus,187,264,"WHO DON, eLife"
+Marburg virus_Netherlands_2008,2008,Marburg virus,1,1,"Emerging Infectious Diseases, WHO DON"
+Marburg virus_United States_2008,2008,Marburg virus,0,1,Morbidity and Mortality Weekly Report
+Nipah virus_Bangladesh_2008a,2008,Nipah virus,4,4,WHO SEARO
+Nipah virus_Bangladesh_2008b,2008,Nipah virus,5,7,WHO SEARO
+Zaire ebolavirus_Democratic Republic of the Congo_2008,2008,Zaire ebolavirus,14,32,"eLife, WHO DON"
+Nipah virus_Bangladesh_2009a,2009,Nipah virus,0,3,WHO SEARO
+Nipah virus_Bangladesh_2009b,2009,Nipah virus,1,1,WHO SEARO
+Machupo virus_Bolivia_2010,2010,Machupo virus,10,131,Current Opinion in Virology
+Nipah virus_Bangladesh_2010,2010,Nipah virus,14,16,WHO SEARO
+Nipah virus_Bangladesh_2011,2011,Nipah virus,40,44,WHO SEARO
+Sudan ebolavirus_Uganda_2011,2011,Sudan ebolavirus,1,1,"WHO DON, Emerging Infectious Diseases"
+Bundibugyo ebolavirus_Democratic Republic of Congo_2012,2012,Bundibugyo ebolavirus,28,52,"eLife, WHO DON"
+MERS-CoV_Saudi Arabia_2012,2012,MERS-CoV,790,2237,"South Korea MOHW Press Releases, WHO DON"
+Marburg virus_Uganda_2012,2012,Marburg virus,15,26,"WHO DON, African Health Sciences, Journal of Infectious Diseases"
+Nipah virus_Bangladesh_2012,2012,Nipah virus,10,12,WHO SEARO
+Sudan ebolavirus_Uganda_2012a,2012,Sudan ebolavirus,17,24,WHO DON
+Sudan ebolavirus_Uganda_2012b,2012,Sudan ebolavirus,4,7,WHO DON
+MERS-CoV_Saudi Arabia_2012,2013,MERS-CoV,23,132,
+Nipah virus_Bangladesh_2013,2013,Nipah virus,14,27,"Bangladesh Institute of Epidemiology, Disease Control, and Research"
+Zaire ebolavirus_Guinea_2013,2013,Zaire ebolavirus,2536,3804,"International Journal of Infectious Diseases, WHO DON, WHO Ebola Situation Reports, The New England Journal of Medicine, WHO Ebola Data and Statistics"
+MERS-CoV_Saudi Arabia_2012,2014,MERS-CoV,6,22,
+Marburg virus_Uganda_2014,2014,Marburg virus,1,1,"WHO DON, Uganda Ministry of Health Weekly Epidemiological Bulletin"
+Nipah virus_Philippines_2014,2014,Nipah virus,9,17,Emerging Infectious Diseases
+Zaire ebolavirus_Democratic Republic of the Congo_2014,2014,Zaire ebolavirus,49,68,"eLife, WHO DON"
+Zaire ebolavirus_Guinea_2013,2014,Zaire ebolavirus,8776,24823,
+MERS-CoV_Saudi Arabia_2012,2015,MERS-CoV,36,193,
+Nipah virus_Bangladesh_2015,2015,Nipah virus,6,9,"Bangladesh Institute of Epidemiology, Disease Control, and Research"
+Zaire ebolavirus_Guinea_2013,2015,Zaire ebolavirus,0,1,
+Zaire ebolavirus_Liberia_2015a,2015,Zaire ebolavirus,2,6,WHO Ebola Situation Reports
+Zaire ebolavirus_Liberia_2015b,2015,Zaire ebolavirus,1,3,WHO Ebola Situation Reports
+MERS-CoV_Saudi Arabia_2012,2016,MERS-CoV,1,1,
+Zaire ebolavirus_Guinea_2016,2016,Zaire ebolavirus,9,13,WHO CSR
+Zaire ebolavirus_Sierra Leone_2016,2016,Zaire ebolavirus,1,2,WHO Ebola Situation Reports
+Marburg virus_Uganda_2017,2017,Marburg virus,3,4,"Uganda Ministry of Health, Uganda Ministry of Health Weekly Epidemiological Bulletin, WHO DON, WHO AFRO Region Situation Reports"
+Zaire ebolavirus_Democratic Republic of the Congo_2017,2017,Zaire ebolavirus,4,8,WHO DON
+Nipah virus_India_2018,2018,Nipah virus,17,19,"WHO DON, Kerala DHS Nipah Viral Fever Daily Report"
+Zaire ebolavirus_Democratic Republic of the Congo_2018,2018,Zaire ebolavirus,33,54,"WHO AFRO External Situation Report, WHO AFRO Weekly Bulletin on Outbreaks and Other Emergencies, WHO DON, Democratic Republic of the Congo MOH Communique de Presse"
+Zaire ebolavirus_Democratic Republic of the Congo_2018b,2018,Zaire ebolavirus,2287,3470,"Uganda Ministry of Health Press Releases, Democratic Republic of the Congo MOH Communique de Presse, WHO AFRO Weekly Bulletin on Outbreaks and Other Emergencies, WHO AFRO External Situation Report, WHO DON"
+Nipah virus_Bangladesh_2019,2019,Nipah virus,6,8,Media
+Nipah virus_India_2019,2019,Nipah virus,0,5,Media
+Zaire ebolavirus_Democratic Republic of the Congo_2018b,2019,Zaire ebolavirus,4,4,
+Novel coronavirus_China_2019,2020,SARS Coronavirus 2,5310489,270030858,
