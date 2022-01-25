@@ -45,6 +45,7 @@ Th number of outbreaks and deaths by pathogen group from 1960 through 2019:
 
 ```{r, results = 'asis'}
 event_table <- fread("./data/spillover_data.csv")
+
 lossDatYear <- event_table[, list(reported_deaths = sum(reported_deaths),
                                 reported_cases = sum(reported_cases),
                                 reported_events = uniqueN(Event_name)),
@@ -66,7 +67,7 @@ event_table[Pathogen %in% c("MERS Coronavirus", "MERS-CoV",
                             "SARS-CoV"), Pathogen_group := "Epidemic coronaviruses"]
 event_table[Pathogen %in% c("SARS Coronavirus 2"), Pathogen_group := "Excluded"]
 
-event_tab <- event_table[, list(Outbreaks = .N, Deaths = sum(reported_deaths)), by = .(Pathogen_group)]
+event_tab <- event_table[, list(Outbreaks = uniqueN(Event_name), Deaths = sum(reported_deaths)), by = .(Pathogen_group)]
 cat(pander(event_tab[Pathogen_group != "Excluded"]))
 ```
 
