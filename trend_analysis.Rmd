@@ -39,8 +39,11 @@ pathgrp_tab <- data.table("Path group" = c("Corona", "Filo", "Other"),
 cat(pander(pathgrp_tab, split.table = Inf))
 ```
 
+## Data summary
 
-```{r}
+Th number of outbreaks and deaths by pathogen group from 1960 through 2019:
+
+```{r, results = 'asis'}
 event_table <- fread("./data/spillover_data.csv")
 lossDatYear <- event_table[, list(reported_deaths = sum(reported_deaths),
                                 reported_cases = sum(reported_cases),
@@ -55,6 +58,16 @@ lossDatDemiDecade <- lossDatYear[,list(reported_deaths = sum(reported_deaths),
 lossDatDemiDecade[, model_year := Event_start_demidecade - 1960]  
 lossDat <- lossDatDemiDecade[Event_start_demidecade < 2020, ]
 lossDatCovid <- lossDatDemiDecade
+event_table[Pathogen %in% c("Machupo virus", "Nipah virus"), Pathogen_group := "Other"]
+event_table[Pathogen %in% c("Sudan ebolavirus", "Zaire ebolavirus",
+                            "Tai Forest ebolavirus", "Bundibugyo ebolavirus",
+                            "Marburg virus"), Pathogen_group := "Filoviruses"]
+event_table[Pathogen %in% c("MERS Coronavirus", "MERS-CoV",
+                            "SARS-CoV"), Pathogen_group := "Epidemic coronaviruses"]
+event_table[Pathogen %in% c("SARS Coronavirus 2"), Pathogen_group := "Excluded"]
+
+event_tab <- event_table[, list(Outbreaks = .N, Deaths = sum(reported_deaths)), by = .(Pathogen_group)]
+cat(pander(event_tab[Pathogen_group != "Excluded"]))
 ```
 
 # Trend by demi decade {.tabset}
@@ -331,3 +344,6 @@ predTableCovid  <- predTableCovid[, list("Demidecade" = Event_start_demidecade,
 cat(pander(predTableCovid))
 ```
 
+# Contact
+
+* Amanda Meadows: ameadows@metabiota.com
