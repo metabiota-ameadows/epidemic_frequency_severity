@@ -1,81 +1,92 @@
-Event_name,Pathogen,Event_start_country,Event_start_year,reported_deaths,reported_cases
-Zaire ebolavirus_Sierra Leone_2016,Zaire ebolavirus,Sierra Leone,2016,1,2
-Zaire ebolavirus_Russia_2004,Zaire ebolavirus,Russia,2004,1,1
-Zaire ebolavirus_Republic of Congo_2003b,Zaire ebolavirus,Republic of Congo,2003,29,35
-Zaire ebolavirus_Republic of Congo_2003a,Zaire ebolavirus,Republic of Congo,2003,128,143
-Zaire ebolavirus_Republic of Congo_2002,Zaire ebolavirus,Republic of Congo,2002,10,11
-Zaire ebolavirus_Liberia_1995,Zaire ebolavirus,Liberia,1995,0,4
-Zaire ebolavirus_Guinea_2016,Zaire ebolavirus,Guinea,2016,9,13
-Zaire ebolavirus_Guinea_2013,Zaire ebolavirus,Guinea,2013,11312,28628
-Zaire ebolavirus_Gabon_2001,Zaire ebolavirus,Gabon,2001,97,124
-Zaire ebolavirus_Gabon_1996b,Zaire ebolavirus,Gabon,1996,45,60
-Zaire ebolavirus_Gabon_1996a,Zaire ebolavirus,Gabon,1996,21,31
-Zaire ebolavirus_Gabon_1994,Zaire ebolavirus,Gabon,1994,30,49
-Zaire ebolavirus_Democratic Republic of the Congo_2018b,Zaire ebolavirus,Democratic Republic of the Congo,2018,2291,3474
-Zaire ebolavirus_Democratic Republic of the Congo_2018,Zaire ebolavirus,Democratic Republic of the Congo,2018,33,54
-Zaire ebolavirus_Democratic Republic of the Congo_2017,Zaire ebolavirus,Democratic Republic of the Congo,2017,4,8
-Zaire ebolavirus_Democratic Republic of the Congo_2014,Zaire ebolavirus,Democratic Republic of the Congo,2014,49,68
-Zaire ebolavirus_Democratic Republic of the Congo_2008,Zaire ebolavirus,Democratic Republic of the Congo,2008,14,32
-Zaire ebolavirus_Democratic Republic of the Congo_2007,Zaire ebolavirus,Democratic Republic of the Congo,2007,187,264
-Zaire ebolavirus_Democratic Republic of the Congo_1995,Zaire ebolavirus,Democratic Republic of the Congo,1995,248,317
-Zaire ebolavirus_Democratic Republic of the Congo_1976,Zaire ebolavirus,Democratic Republic of the Congo,1976,280,318
-Zaire ebolavirus_Democratic Republic of Congo_1977,Zaire ebolavirus,Democratic Republic of Congo,1977,1,1
-Zaire ebolavirus_Congo_2005,Zaire ebolavirus,Congo,2005,9,12
-Tai Forest ebolavirus_Cote d'Ivoire_1994,Tai Forest ebolavirus,Cote d'Ivoire,1994,0,1
-Sudan ebolavirus_Uganda_2012b,Sudan ebolavirus,Uganda,2012,4,7
-Sudan ebolavirus_Uganda_2012a,Sudan ebolavirus,Uganda,2012,17,24
-Sudan ebolavirus_Uganda_2011,Sudan ebolavirus,Uganda,2011,1,1
-Sudan ebolavirus_Uganda_2000,Sudan ebolavirus,Uganda,2000,224,428
-Sudan ebolavirus_South Sudan_2004,Sudan ebolavirus,South Sudan,2004,7,17
-Sudan ebolavirus_South Sudan_1979,Sudan ebolavirus,South Sudan,1979,22,34
-Sudan ebolavirus_South Sudan_1976,Sudan ebolavirus,South Sudan,1976,151,298
-SARS-CoV_China_2003,SARS-CoV,China,2003,0,4
-SARS-CoV_China_2002,SARS-CoV,China,2002,922,9106
-Nipah virus_Philippines_2014,Nipah virus,Philippines,2014,9,17
-Nipah virus_Malaysia_1998,Nipah virus,Malaysia,1998,112,294
-Nipah virus_India_2019,Nipah virus,India,2019,0,5
-Nipah virus_India_2018,Nipah virus,India,2018,17,19
-Nipah virus_India_2007,Nipah virus,India,2007,5,5
-Nipah virus_India_2001,Nipah virus,India,2001,45,66
-Nipah virus_Bangladesh_2019,Nipah virus,Bangladesh,2019,6,8
-Nipah virus_Bangladesh_2015,Nipah virus,Bangladesh,2015,6,9
-Nipah virus_Bangladesh_2013,Nipah virus,Bangladesh,2013,14,27
-Nipah virus_Bangladesh_2012,Nipah virus,Bangladesh,2012,10,12
-Nipah virus_Bangladesh_2011,Nipah virus,Bangladesh,2011,40,44
-Nipah virus_Bangladesh_2010,Nipah virus,Bangladesh,2010,14,16
-Nipah virus_Bangladesh_2009b,Nipah virus,Bangladesh,2009,1,1
-Nipah virus_Bangladesh_2009a,Nipah virus,Bangladesh,2009,0,3
-Nipah virus_Bangladesh_2008b,Nipah virus,Bangladesh,2008,5,7
-Nipah virus_Bangladesh_2008a,Nipah virus,Bangladesh,2008,4,4
-Nipah virus_Bangladesh_2007c,Nipah virus,Bangladesh,2007,1,3
-Nipah virus_Bangladesh_2007b,Nipah virus,Bangladesh,2007,5,8
-Nipah virus_Bangladesh_2007a,Nipah virus,Bangladesh,2007,3,7
-Nipah virus_Bangladesh_2005,Nipah virus,Bangladesh,2005,0,11
-Nipah virus_Bangladesh_2004c,Nipah virus,Bangladesh,2004,11,12
-Nipah virus_Bangladesh_2004b,Nipah virus,Bangladesh,2004,27,36
-Nipah virus_Bangladesh_2004a,Nipah virus,Bangladesh,2004,23,31
-Nipah virus_Bangladesh_2003,Nipah virus,Bangladesh,2003,8,12
-Nipah virus_Bangladesh_2001,Nipah virus,Bangladesh,2001,9,28
-Marburg virus_United States_2008,Marburg virus,United States,2008,0,1
-Marburg virus_Uganda_2017,Marburg virus,Uganda,2017,3,4
-Marburg virus_Uganda_2014,Marburg virus,Uganda,2014,1,1
-Marburg virus_Uganda_2012,Marburg virus,Uganda,2012,15,26
-Marburg virus_Uganda_2007,Marburg virus,Uganda,2007,1,4
-Marburg virus_South Africa_1975,Marburg virus,South Africa,1975,1,3
-Marburg virus_Russia_1990,Marburg virus,Russia,1990,1,1
-Marburg virus_Netherlands_2008,Marburg virus,Netherlands,2008,1,1
-Marburg virus_Kenya_1987,Marburg virus,Kenya,1987,1,1
-Marburg virus_Kenya_1980,Marburg virus,Kenya,1980,1,2
-Marburg virus_Germany_1967,Marburg virus,Germany,1967,7,31
-Marburg virus_Democratic Republic of Congo_1998,Marburg virus,Democratic Republic of Congo,1998,125,154
-Marburg virus_Angola_2004,Marburg virus,Angola,2004,329,376
-Machupo virus_Bolivia_2010,Machupo virus,Bolivia,2010,10,131
-Machupo virus_Bolivia_2005,Machupo virus,Bolivia,2005,12,200
-Machupo virus_Bolivia_2000,Machupo virus,Bolivia,2000,0,18
-Machupo virus_Bolivia_1999,Machupo virus,Bolivia,1999,0,8
-Machupo virus_Bolivia_1990,Machupo virus,Bolivia,1990,7,9
-Machupo virus_Bolivia_1970,Machupo virus,Bolivia,1970,5,6
-Machupo virus_Bolivia_1969,Machupo virus,Bolivia,1969,6,10
-Machupo virus_Bolivia_1963,Machupo virus,Bolivia,1963,114,514
-Bundibugyo ebolavirus_Uganda_2007,Bundibugyo ebolavirus,Uganda,2007,42,131
-Bundibugyo ebolavirus_Democratic Republic of Congo_2012,Bundibugyo ebolavirus,Democratic Republic of Congo,2012,28,52
+Event_name,Event_start_country,Event_start_year,Event_end_year,reported_cases,reported_deaths
+Bundibugyo ebolavirus_Democratic Republic of Congo_2012,Democratic Republic of Congo,2012,2012,52,28
+Bundibugyo ebolavirus_Uganda_2007,Uganda,2007,2007,131,42
+MERS Coronavirus_Oman_2022,Oman,2022,2022,1,0
+MERS Coronavirus_Qatar_2022,Qatar,2022,2022,2,1
+MERS Coronavirus_Saudi Arabia_2021,Saudi Arabia,2021,2021,17,8
+MERS Coronavirus_United Arab Emirates_2021,United Arab Emirates,2021,2021,2,0
+MERS-CoV_Saudi Arabia_2012,Saudi Arabia,2012,2020,2585,881
+Machupo virus_Bolivia_1963,Bolivia,1963,1964,514,114
+Machupo virus_Bolivia_1969,Bolivia,1969,1969,10,6
+Machupo virus_Bolivia_1970,Bolivia,1970,1975,6,5
+Machupo virus_Bolivia_1990,Bolivia,1990,1995,9,7
+Machupo virus_Bolivia_1999,Bolivia,1999,1999,8,0
+Machupo virus_Bolivia_2000,Bolivia,2000,2000,18,0
+Machupo virus_Bolivia_2005,Bolivia,2005,2010,200,12
+Machupo virus_Bolivia_2010,Bolivia,2010,2013,131,10
+Marburg virus_Angola_2004,Angola,2004,2005,376,329
+Marburg virus_Democratic Republic of Congo_1998,Democratic Republic of Congo,1998,2000,154,125
+Marburg virus_Ghana_2022,Ghana,2022,2022,2,2
+Marburg virus_Guinea_2021,Guinea,2021,2021,1,1
+Marburg virus_Kenya_1980,Kenya,1980,1980,2,1
+Marburg virus_Kenya_1987,Kenya,1987,1987,1,1
+Marburg virus_South Africa_1975,South Africa,1975,1975,3,1
+Marburg virus_Uganda_2007,Uganda,2007,2007,4,1
+Marburg virus_Uganda_2012,Uganda,2012,2012,26,15
+Marburg virus_Uganda_2014,Uganda,2014,2014,1,1
+Marburg virus_Uganda_2017,Uganda,2017,2017,4,3
+Nipah virus_Bangladesh_2001,Bangladesh,2001,2001,28,9
+Nipah virus_Bangladesh_2003,Bangladesh,2003,2003,12,8
+Nipah virus_Bangladesh_2004a,Bangladesh,2004,2004,31,23
+Nipah virus_Bangladesh_2004b,Bangladesh,2004,2004,36,27
+Nipah virus_Bangladesh_2004c,Bangladesh,2004,2005,12,11
+Nipah virus_Bangladesh_2005,Bangladesh,2005,2005,11,0
+Nipah virus_Bangladesh_2007a,Bangladesh,2007,2007,7,3
+Nipah virus_Bangladesh_2007b,Bangladesh,2007,2007,8,5
+Nipah virus_Bangladesh_2007c,Bangladesh,2007,2007,3,1
+Nipah virus_Bangladesh_2008a,Bangladesh,2008,2008,4,4
+Nipah virus_Bangladesh_2008b,Bangladesh,2008,2008,7,5
+Nipah virus_Bangladesh_2009a,Bangladesh,2009,2009,3,0
+Nipah virus_Bangladesh_2009b,Bangladesh,2009,2009,1,1
+Nipah virus_Bangladesh_2010,Bangladesh,2010,2010,16,14
+Nipah virus_Bangladesh_2011,Bangladesh,2011,2011,44,40
+Nipah virus_Bangladesh_2012,Bangladesh,2012,2012,12,10
+Nipah virus_Bangladesh_2013,Bangladesh,2013,2014,27,14
+Nipah virus_Bangladesh_2015,Bangladesh,2015,2015,9,6
+Nipah virus_Bangladesh_2019,Bangladesh,2019,2019,8,6
+Nipah virus_Bangladesh_2020,Bangladesh,2020,2020,7,5
+Nipah virus_Bangladesh_2021,Bangladesh,2021,2021,2,0
+Nipah virus_India_2001,India,2001,2001,66,45
+Nipah virus_India_2007,India,2007,2007,5,5
+Nipah virus_India_2018,India,2018,2018,19,17
+Nipah virus_India_2019,India,2019,2019,5,0
+Nipah virus_India_2021_Kerala,India,2021,2021,1,1
+Nipah virus_Malaysia_1998,Malaysia,1998,2001,294,112
+Nipah virus_Philippines_2014,Philippines,2014,2014,17,9
+Novel coronavirus_China_2019,China,2020,2022,551225534,6345582
+SARS-CoV_China_2002,China,2002,2004,9106,922
+SARS-CoV_China_2003,China,2003,2004,4,0
+Sudan ebolavirus_South Sudan_1976,South Sudan,1976,1976,298,151
+Sudan ebolavirus_South Sudan_1979,South Sudan,1979,1979,34,22
+Sudan ebolavirus_South Sudan_2004,South Sudan,2004,2004,17,7
+Sudan ebolavirus_Uganda_2000,Uganda,2000,2001,428,224
+Sudan ebolavirus_Uganda_2011,Uganda,2011,2011,1,1
+Sudan ebolavirus_Uganda_2012a,Uganda,2012,2012,24,17
+Sudan ebolavirus_Uganda_2012b,Uganda,2012,2012,7,4
+Tai Forest ebolavirus_Cote d'Ivoire_1994,Cote d'Ivoire,1994,1994,1,0
+Zaire ebolavirus_Congo_2005,Congo,2005,2005,12,9
+Zaire ebolavirus_Democratic Republic of Congo_1977,Democratic Republic of Congo,1977,1977,1,1
+Zaire ebolavirus_Democratic Republic of the Congo_1976,Democratic Republic of the Congo,1976,1976,318,280
+Zaire ebolavirus_Democratic Republic of the Congo_1995,Democratic Republic of the Congo,1995,1995,317,248
+Zaire ebolavirus_Democratic Republic of the Congo_2007,Democratic Republic of the Congo,2007,2007,264,187
+Zaire ebolavirus_Democratic Republic of the Congo_2008,Democratic Republic of the Congo,2008,2009,32,14
+Zaire ebolavirus_Democratic Republic of the Congo_2014,Democratic Republic of the Congo,2014,2014,68,49
+Zaire ebolavirus_Democratic Republic of the Congo_2017,Democratic Republic of the Congo,2017,2017,8,4
+Zaire ebolavirus_Democratic Republic of the Congo_2018,Democratic Republic of the Congo,2018,2018,54,33
+Zaire ebolavirus_Democratic Republic of the Congo_2018b,Democratic Republic of the Congo,2018,2020,3474,2291
+Zaire ebolavirus_Democratic Republic of the Congo_2020,Democratic Republic of the Congo,2020,2020,130,55
+Zaire ebolavirus_Democratic Republic of the Congo_2021,Democratic Republic of the Congo,2021,2021,12,6
+Zaire ebolavirus_Democratic Republic of the Congo_2021b,Democratic Republic of the Congo,2021,2021,11,9
+Zaire ebolavirus_Democratic Republic of the Congo_2022_Equateur,Democratic Republic of the Congo,2022,2022,5,5
+Zaire ebolavirus_Gabon_1994,Gabon,1994,1995,49,30
+Zaire ebolavirus_Gabon_1996a,Gabon,1996,1996,31,21
+Zaire ebolavirus_Gabon_1996b,Gabon,1996,1997,60,45
+Zaire ebolavirus_Gabon_2001,Gabon,2001,2002,124,97
+Zaire ebolavirus_Guinea_2013,Guinea,2013,2015,28628,11312
+Zaire ebolavirus_Guinea_2016,Guinea,2016,2016,13,9
+Zaire ebolavirus_Guinea_2021,Guinea,2021,2021,23,12
+Zaire ebolavirus_Liberia_1995,Liberia,1995,1995,4,0
+Zaire ebolavirus_Republic of Congo_2002,Republic of Congo,2002,2002,11,10
+Zaire ebolavirus_Republic of Congo_2003a,Republic of Congo,2003,2003,143,128
+Zaire ebolavirus_Republic of Congo_2003b,Republic of Congo,2003,2003,35,29
+Zaire ebolavirus_Sierra Leone_2016,Sierra Leone,2016,2016,2,1
